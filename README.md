@@ -1,30 +1,41 @@
-# React + TypeScript + Vite
+# Тестовое задание на стэке React + TypeScript
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Этот проект предоставляет минимальное жизнеспособное ПО для вывода товаров.
 
-Currently, two official plugins are available:
+<div id="header" align="center">
+  <img src="https://media.giphy.com/media/M9gbBd9nbDrOTu1Mqx/giphy.gif" width="100"/>
+</div>
+<div id="badges" align="center">
+  <a href="https://t.me/Je_M1">
+    <img src="https://img.shields.io/badge/Telegram-blue?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram Badge"/>
+  </a>
+  <a href="https://www.youtube.com/channel/UCxTe-frN6V-x9QEFUnLMerg">
+    <img src="https://img.shields.io/badge/YouTube-red?style=for-the-badge&logo=youtube&logoColor=white" alt="Youtube Badge"/>
+  </a>
+    <a href="https://vk.com/id434638625">
+    <img src="https://img.shields.io/badge/vk-blue?style=for-the-badge&logo=vk&logoColor=white" alt="Vk Badge"/>
+  </a>
+    <a href="your-twitter-URL">
+    <img src="https://img.shields.io/badge/Gmail-white?style=for-the-badge&logo=gmail&logoColor=red" alt="Instagram Badge"/>
+  </a>
+</div>
+<div align="center">
+<img src="https://komarev.com/ghpvc/?username=zhebarov-m&style=flat-square&color=blue" alt=""/>
+  <a href="https://www.youtube.com/channel/UCxTe-frN6V-x9QEFUnLMerg" target="_blank">
+<img alt="YouTube Channel Views" src="https://img.shields.io/youtube/channel/views/UCxTe-frN6V-x9QEFUnLMerg">
+</a>
+</div>
+<hr>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Использованные инструменты
 
-## Expanding the ESLint configuration
+- **React**: JavaScript библиотека для создания пользовательских интерфейсов.
+- **TypeScript**: Статически типизированный JavaScript, добавляющий дополнительные функции к языку.
+- **Yarn**: Пакетный менеджер для управления зависимостями проекта.
+- **Vite**: Современный инструмент для быстрой разработки веб-приложений с поддержкой HMR (горячей перезагрузки модулей).
+- **Axios**: Библиотека для отправки асинхронных запросов.
+- **Date-dns**: Библиотека для работы с датами.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
+## Как запустить проект
 ```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+yarn dev
