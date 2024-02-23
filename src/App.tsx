@@ -75,7 +75,7 @@ const App: React.FC = () => {
             const uniqueProducts: Product[] = [];
 
             const productsMap: { [key: string]: Product } = {};
-            data.result.forEach((item: any) => {
+            data.result.forEach((item: Product) => {
                 const product: Product = {
                     id: item.id,
                     product: item.product,
