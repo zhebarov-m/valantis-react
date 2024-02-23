@@ -10,6 +10,7 @@ import ProductList from "./components/ProductList/ProductList.tsx";
 import Pagination from "./components/Pagination/Pagination.tsx";
 import FilterForm from "./components/FilterForm/FilterForm.tsx";
 import { BsFilter } from "react-icons/bs";
+import Loader from "./components/Loader/Loader.tsx";
 
 const API_URL = 'https://api.valantis.store:41000/';
 
@@ -113,7 +114,7 @@ const App: React.FC = () => {
                 <FilterForm collapsed={isOpenForm} setOpenForm={openFilterForm}/>
             </div>
             {loading ? (
-                <p>Загрузка...</p>
+                <Loader />
             ) : (
                 <>
                     <ProductList/>
