@@ -11,6 +11,8 @@ import Pagination from "./components/Pagination/Pagination.tsx";
 import FilterForm from "./components/FilterForm/FilterForm.tsx";
 import { BsFilter } from "react-icons/bs";
 import Loader from "./components/Loader/Loader.tsx";
+import Skeleton from "./components/Skeleton/Skeleton.tsx";
+import skeleton from "./components/Skeleton/Skeleton.tsx";
 
 const API_URL = 'https://api.valantis.store:41000/';
 
@@ -114,7 +116,9 @@ const App: React.FC = () => {
                 <FilterForm collapsed={isOpenForm} setOpenForm={openFilterForm}/>
             </div>
             {loading ? (
-                <Loader />
+                <div className="skeleton">
+                    {new Array(10).fill(null).map(_ => <Skeleton />)}
+                </div>
             ) : (
                 <>
                     <ProductList/>
