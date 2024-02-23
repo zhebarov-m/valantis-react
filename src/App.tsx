@@ -11,7 +11,7 @@ import Pagination from "./components/Pagination/Pagination.tsx";
 import FilterForm from "./components/FilterForm/FilterForm.tsx";
 import { BsFilter } from "react-icons/bs";
 
-const API_URL = 'http://api.valantis.store:40000/';
+const API_URL = 'https://api.valantis.store:41000/';
 
 
 interface ApiResponse {
