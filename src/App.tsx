@@ -10,9 +10,7 @@ import ProductList from "./components/ProductList/ProductList.tsx";
 import Pagination from "./components/Pagination/Pagination.tsx";
 import FilterForm from "./components/FilterForm/FilterForm.tsx";
 import { BsFilter } from "react-icons/bs";
-import Loader from "./components/Loader/Loader.tsx";
 import Skeleton from "./components/Skeleton/Skeleton.tsx";
-import skeleton from "./components/Skeleton/Skeleton.tsx";
 
 const API_URL = 'https://api.valantis.store:41000/';
 
