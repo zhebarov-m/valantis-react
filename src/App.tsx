@@ -1,14 +1,14 @@
-import React, { useEffect } from 'react';
+import React, {useEffect} from 'react';
 import axios from 'axios';
 import md5 from 'md5';
-import './App.css'
+import './App.scss'
 import {useAppDispatch, useAppSelector} from "./redux/hooks/hooks.ts";
 import {Product, setLoading, setProducts} from "./redux/slices/productSlice.ts";
 import SearchFrom from "./components/SearchForm/SearchFrom.tsx";
 import ProductList from "./components/ProductList/ProductList.tsx";
+import Pagination from "./components/Pagination/Pagination.tsx";
 
 const API_URL = 'http://api.valantis.store:40000/';
-
 
 
 interface ApiResponse {
@@ -16,6 +16,7 @@ interface ApiResponse {
 }
 
 const App: React.FC = () => {
+    const products = useAppSelector(state => state.products.products)
     const page = useAppSelector(state => state.products.page)
     const search = useAppSelector(state => state.products.search)
     const loading = useAppSelector(state => state.products.loading)
@@ -35,9 +36,9 @@ const App: React.FC = () => {
         try {
             const response = await axios.post(API_URL, {
                 action: 'get_ids',
-                params: { offset: (page - 1) * 50, limit: 50 },
+                params: {offset: (page - 1) * 50, limit: 50},
             }, {
-                headers: { 'Content-Type': 'application/json', 'X-Auth': authString }
+                headers: {'Content-Type': 'application/json', 'X-Auth': authString}
             });
 
             const data: ApiResponse = response.data;
@@ -57,9 +58,9 @@ const App: React.FC = () => {
 
             const response = await axios.post(API_URL, {
                 action: 'get_items',
-                params: { ids: uniqueProductIds }
+                params: {ids: uniqueProductIds}
             }, {
-                headers: { 'Content-Type': 'application/json', 'X-Auth': authString }
+                headers: {'Content-Type': 'application/json', 'X-Auth': authString}
             });
 
             const data = response.data;
@@ -80,26 +81,26 @@ const App: React.FC = () => {
             });
             dispatch(setProducts(uniqueProducts));
         } catch (error) {
-            console.error('Error:', error);
+            console.error('Возникла ошибка: ', error);
         }
     };
 
 
-
-
-
     return (
-        <div>
-            <h1>Ювелирные изделия</h1>
-            <SearchFrom />
+        <div className="App">
+            <div className="title">
+                <h1>Ювелирные изделия</h1>
+                <span>Кол-во товара: {products.length}</span>
+            </div>
+            <SearchFrom/>
             {loading ? (
-                <p>Loading...</p>
+                <p>Загрузка...</p>
             ) : (
                 <>
-                    <ProductList />
-
+                    <ProductList/>
+                    <Pagination/>
                 </>
-            )   }
+            )}
         </div>
     );
 };

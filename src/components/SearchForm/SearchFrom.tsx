@@ -1,6 +1,7 @@
 import React from "react";
 import {setPage, setSearch} from "../../redux/slices/productSlice.ts";
 import {useAppDispatch, useAppSelector} from "../../redux/hooks/hooks.ts";
+import styles from './SearchForm.module.scss'
 
 const SearchFrom = () => {
     const search = useAppSelector(state => state.products.search)
@@ -16,8 +17,10 @@ const SearchFrom = () => {
     };
 
     return (
-        <form onSubmit={handleSearchSubmit}>
-            <input type="text" value={search} onChange={handleSearchChange} placeholder="Search by product name"/>
+        <form
+            className={styles.searchForm}
+            onSubmit={handleSearchSubmit}>
+            <input type="text" value={search} onChange={handleSearchChange} placeholder="Введите название"/>
             <button type="submit">Search</button>
         </form>
     );
