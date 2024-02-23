@@ -12,6 +12,7 @@ interface productType {
     page: number,
     search: string,
     loading: boolean,
+    filterByPrice: number[],
 }
 
 const initialState: productType = {
@@ -19,6 +20,7 @@ const initialState: productType = {
     page: 1,
     search: '',
     loading: false,
+    filterByPrice: [],
 };
 
 const productsSlice = createSlice({
@@ -37,9 +39,18 @@ const productsSlice = createSlice({
         setLoading: (state, action: PayloadAction<boolean>) => {
             state.loading = action.payload;
         },
+        setFilterByPrice: (state, action: PayloadAction<number[]>) => {
+            state.filterByPrice = action.payload;
+        },
     },
 });
 
-export const { setProducts, setPage, setSearch, setLoading } = productsSlice.actions;
+export const {
+    setProducts,
+    setPage,
+    setSearch,
+    setLoading,
+    setFilterByPrice,
+}  = productsSlice.actions;
 
 export default productsSlice.reducer;

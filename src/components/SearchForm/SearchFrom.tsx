@@ -21,7 +21,7 @@ const SearchFrom = () => {
             className={styles.searchForm}
             onSubmit={handleSearchSubmit}>
             <input type="text" value={search} onChange={handleSearchChange} placeholder="Введите название"/>
-            <button type="submit">Search</button>
+            <button type="submit">Поиск</button>
         </form>
     );
 };

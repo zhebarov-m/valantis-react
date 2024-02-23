@@ -1,0 +1,29 @@
+.navigate {
+    width: 1440px;
+    position: fixed;
+    top: 50%;
+
+    display: flex;
+    justify-content: center;
+    gap: 1600px;
+
+    button {
+        background-color: transparent;
+        border: none;
+        font-size: 90px;
+        transition: all .3s ease-in-out;
+
+        &:hover {
+            cursor: pointer;
+            transform: scale(1.1);
+        }
+
+        color: #ad4e5a;
+
+        &:disabled {
+            color: rgba(165, 40, 56, 0.6);
+            transform: scale(1);
+            cursor: not-allowed;
+        }
+    }
+}

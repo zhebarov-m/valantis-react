@@ -1,0 +1,60 @@
+.filterForm {
+    padding: 20px;
+    color: #000;
+    font-family: Manrope, monospace, sans-serif;
+    width: 0;
+    height: 100%;
+    transition: all .3s ease-in-out;
+
+    background-color: #b6b6b6;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: center;
+
+    input {
+        padding: 10px;
+        font-family: Manrope, monospace;
+    }
+
+    button {
+        padding: 10px 5px;
+    }
+
+    .cross {
+        font-size: 26px;
+        color: #A52838;
+        transition: all .6s ease-in-out;
+        cursor: pointer;
+
+        &:hover {
+            transform: rotate(180deg);
+            font-size: 32px;
+        }
+    }
+}
+
+.collapsed {
+    width: 30%;
+    background-color: white;
+}
+
+.overlayVis {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.34);
+    opacity: 1;
+    transition: opacity .3s ease-in-out;
+}
+
+.overlayNotVis {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.34);
+    opacity: 0;
+}

@@ -8,6 +8,52 @@ body {
 
 .App {
     width: 1440px;
+    .warning {
+        display: flex;
+        align-items: end;
+        color: #daa7a7;
+        font-family: Manrope, monospace, sans-serif;
+        font-size: 14px;
+        animation: visibleWarn 3s infinite;
+    }
+
+    @keyframes visibleWarn {
+        0% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    .filterWrapper {
+        display: flex;
+        justify-content: space-between;
+        margin: 20px 0;
+
+        .filterBtn {
+            background-color: rgba(166, 43, 59, 0.87);
+            color: #F2F3F7;
+            padding: 10px 20px;
+            font-family: monospace, sans-serif;
+            font-size: 16px;
+            border-radius: 30px;
+            transition: background-color .3s ease-in-out;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2px;
+
+            &:hover {
+                background-color: #A52838;
+                cursor: pointer;
+            }
+        }
+    }
 
     .title {
         display: flex;

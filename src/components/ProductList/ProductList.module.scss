@@ -1,4 +1,5 @@
 .productList {
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(10/1fr);
@@ -27,10 +28,11 @@
         }
 
         .price {
+            display: inline-block;
             color: #A52838;
             font-size: 18px;
             font-weight: 500;
-            margin: 5px 0;
+            margin: 2px 0 5px 0;
             transition: all .3s ease-in-out;
             &:hover {
                 cursor: pointer;
